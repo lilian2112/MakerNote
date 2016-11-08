@@ -18,6 +18,10 @@ window.onload = function()
     event.preventDefault();
     addNote();
   });
+  document.getElementById("all_notes").addEventListener('click', function(){
+    event.preventDefault();
+    displayNotes();
+  });
 
   //function to add note
   function addNote(){
@@ -41,7 +45,7 @@ window.onload = function()
 
   function showNote(note) {
     document
-    .getElementById("full_note")
+    .getElementById("note_list")
     .innerHTML = note;
   };
 }
