@@ -1,14 +1,6 @@
-window.testLib = (function() {
-
-  function TestLib(elements) {
-
+  function TestLib() {
+    this.document = document
   }
-
-  var testLib = {
-    TestLib.prototype.get = function(element) {
-      document.getElementById(element);
-    };
+  var getElement = function(element){
+      return this.document.getElementById(element);
   };
-
-  return testLib;
-}());

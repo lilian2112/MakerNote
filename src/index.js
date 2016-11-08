@@ -1,4 +1,3 @@
-
 noteList = new NoteList();
 
 window.onload = function()
@@ -11,21 +10,21 @@ window.onload = function()
     for (var i = 0; i < notes.length; i++) {
       result += " <li style='list-style: none'><a href='#" + notes[i] + "'>" + notes[i].substring(0,20) + "</a></li>";
     }
-    document.getElementById("note_list").innerHTML = result
+    getElement("note_list").innerHTML = result
   };
 
-  document.getElementById("add_note_button").addEventListener('click', function(){
+  getElement("add_note_button").addEventListener('click', function(){
     event.preventDefault();
     addNote();
   });
-  document.getElementById("all_notes").addEventListener('click', function(){
+  getElement("all_notes").addEventListener('click', function(){
     event.preventDefault();
     displayNotes();
   });
 
   //function to add note
   function addNote(){
-    var noteText = document.getElementById("note_text").value;
+    var noteText = getElement("note_text").value;
     noteList.addNote(noteText);
     displayNotes();
   };
@@ -44,8 +43,6 @@ window.onload = function()
   };
 
   function showNote(note) {
-    document
-    .getElementById("note_list")
-    .innerHTML = note;
+    getElement("note_list").innerHTML = note;
   };
 }
